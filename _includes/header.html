@@ -1,0 +1,23 @@
+<body>
+
+<title>We Are the Field</title>
+<header class="site-sidebar">
+    {% assign default_paths = site.pages | map: "path" %}
+    {% assign page_paths = site.header_pages | default: default_paths %}
+         <nav class="site-nav">
+
+    <span class="title">We Are <br>the Field
+        <div class="dropdown">
+  <button class="dropbtn"><span class="material-symbols-outlined">
+expand_more
+</span></button>
+  <div class="dropdown-content">
+    <a href="/index.html">Platform</a>
+    <a href="/inprogress/">Stats in Progress</a>
+    <a href="/currentstats/">Current Stats</a>
+    <a href="/inquiries/">Inquiries</a>
+  </div>
+</div></span>
+
+</header>
+</body>

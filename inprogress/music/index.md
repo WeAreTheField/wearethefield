@@ -33,7 +33,7 @@ Number of independent/nonaffiliated scholars presenting papers at conferences (s
 - AMS/SMT: 0 
 - SEM: 3
 
-###  2017:
+###  2017
 - SAM: 2
 - AMS/SMT: 0
 - SEM: 6

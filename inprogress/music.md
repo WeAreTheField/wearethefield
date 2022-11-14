@@ -38,7 +38,7 @@ Number of independent/nonaffiliated scholars presenting papers at conferences (s
 - AMS/SMT: 0
 - SEM: 6
 
-### Note: 
+### Notes: 
 Excludes panel organizers who do not present a paper and posters--need to double check if these numbers include roundtable participants.
 
 Need to include total number of presenters.

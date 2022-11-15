@@ -41,15 +41,24 @@
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: #D9CED7; 
-  border-radius: 5px;
+  border-radius: 0px;
+  border: 0px solid 
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #D9CED7; 
 }
-</style>
-<style>
+/* Firefox */
+  * {
+    scrollbar-width: auto;
+    }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 3px;
+  }
+
 body, html {
   height: 100%;
   margin:  0;
@@ -283,6 +292,94 @@ ol, li, ul {
 .dropdown:hover .dropdown-content {
   display: block;
 
+}
+
+.stat1, .stat2
+{
+  display:  block;
+}
+
+.one {
+height:  500px;
+width:  33%;
+border:  none;
+}
+
+.two {
+height:  500px;
+width:  33%;
+border:  none;
+}
+
+.three
+{
+height:  500px;
+width:  33%;
+border:  none;
+}
+
+@media only screen and (max-width: 900px) {
+
+  .one {
+height:  500px;
+width:  45%;
+border:  none;
+}
+
+.two {
+height:  500px;
+width:  45%;
+border:  none;
+}
+
+.three
+{
+height:  500px;
+width:  45%;
+border:  none;
+}
+}
+@media only screen and (max-width: 668px) {
+
+  .one {
+height:  500px;
+width:  48%;
+border:  none;
+}
+
+.two {
+height:  500px;
+width:  48%;
+border:  none;
+}
+
+.three
+{
+height:  500px;
+width:  48%;
+border:  none;
+}
+}
+@media only screen and (max-width: 494px) {
+
+  .one {
+height:  500px;
+width:  97%;
+border:  none;
+}
+
+.two {
+height:  500px;
+width:  97%;
+border:  none;
+}
+
+.three
+{
+height:  500px;
+width:  97%;
+border:  none;
+}
 }
 @media only screen and (max-width: 600px) {
   body, html {

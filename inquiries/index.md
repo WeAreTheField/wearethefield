@@ -6,6 +6,8 @@ title:  "Inquiries"
 If interested in providing statistics about your field, or to discuss the project in general, please email   
 <span class="emphasis">WeAreTheField-at-protonmail-dot-com.</span>
 
+We also have a reading list. Join our [Zotero group](https://www.zotero.org/groups/4860415/wearethefield) for the latest articles and studies on scholars outside of academia, and add any relevant literature.
+
 
 ## Tech
 

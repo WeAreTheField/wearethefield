@@ -31,9 +31,9 @@ Number of independent/nonaffiliated scholars presenting papers at conferences (s
 - SEM: 3
 
 ###  2017
-- SAM: 2
-- AMS/SMT: 0
-- SEM: 6
+- SAM: 2/145 (1.4%)
+- AMS/SMT: 10/286 (3%)
+- SEM: 8/312 (2.5%)
 
 ### Notes: 
 Excludes panel organizers who do not present a paper and posters--need to double check if these numbers include roundtable participants.

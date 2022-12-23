@@ -11,7 +11,7 @@ We also have a reading list. Join our [Zotero group](https://www.zotero.org/grou
 
 ## Tech
 
-We Are the Field is a decentralized collaborative project hosted on Github powered by [Jekyll](https://jekyllrb.com/). 
+We Are the Field is a decentralized collaborative project hosted on [Github](https://github.com/WeAreTheField/wearethefield) powered by [Jekyll](https://jekyllrb.com/). 
 
 Posts are written in Markdown. Reports also utilize [Mermaid.js](https://mermaid.js.org/) for diagramming and charts.
 

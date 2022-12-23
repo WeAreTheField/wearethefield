@@ -42,51 +42,79 @@
 </ul>
 
 <h3 id="amount-of-independentnon-affiliated-scholars-presenting-papers-at-conferences-see-note">Amount of independent/non-affiliated scholars presenting papers at conferences (see note):</h3>
+<pre class="mermaid">
+            graph TD
+            A[SAM] 
+            A--&gt; B[2017]
+            A--&gt; C[2018]
+            A--&gt; D[2019]
+            A--&gt; E[2020]
+            A--&gt; F[2021]
+            A--&gt; G[2022]
+            B--&gt;BB[2/145, 1.38%]
+            C--&gt;CC[2/137, 1.46%]
+            D--&gt;DD[3/160, 1.88%]
+            E--&gt;EE[2/111, 1.80%]
+            F--&gt;FF[7/120, 5.83%]
+            G--&gt;GG[5/81, 6.17%]
 
-<h3 id="2022">2022</h3>
-<ul>
-  <li>AMS/SMT/SEM (MusicCon 2022): <span class="contentstat">12/746 (1.61%)</span></li>
-  <li>SAM: <span class="contentstat">5/81 (6.17%)</span></li>
-</ul>
+    </pre>
 
-<h3 id="2021">2021</h3>
-<ul>
-  <li>AMS: <span class="contentstat">9/286 (3.15%)</span></li>
-  <li>SEM: <span class="contentstat">4/340 (1.18%)</span></li>
-  <li>SAM: <span class="contentstat">7/120 (5.83%) </span></li>
-</ul>
+<pre class="mermaid">
+            graph TD
+            A[SEM] 
+            A--&gt; B[2017]
+            A--&gt; C[2018]
+            A--&gt; D[2019]
+            A--&gt; E[2020]
+            A--&gt; F[2021]
+            A--&gt; G[2022]
+            B--&gt;BB[8/312, 2.56%]
+            C--&gt;CC[4/299, 1.34%]
+            D--&gt;DD[9/376, 2.39%]
+            E--&gt;EE[2/375, .0.53%]
+            F--&gt;FF[4/340, 1.18%]
+            G--&gt;GG[MusicCon22: 12/746, 1.61%]
 
-<h3 id="2020">2020</h3>
-<ul>
-  <li>AMS: <span class="contentstat">3/278 (1.08%)</span></li>
-  <li>SEM: <span class="contentstat">2/375 (.0.53%)</span></li>
-  <li>SAM: <span class="contentstat">2/111 (1.80%)
-</span>
-    <h3 id="2019">2019</h3>
-  </li>
-  <li>AMS: <span class="contentstat">18/344 (5.23%)</span></li>
-  <li>SEM: <span class="contentstat">9/376 (2.39%%)</span></li>
-  <li>SAM: <span class="contentstat">3/160 (1.88%)</span></li>
-</ul>
+</pre>
 
-<h3 id="2018">2018</h3>
-<ul>
-  <li>AMS/SMT: <span class="contentstat">14/415 (3.37%)</span></li>
-  <li>SEM:<span class="contentstat"> 4/299 (1.34%)</span></li>
-  <li>SAM: <span class="contentstat">2/137 (1.46%)</span></li>
-</ul>
+<pre class="mermaid">
+            graph TD
+            A[AMS] 
+            A--&gt; B[2017]
+            A--&gt; C[2018]
+            A--&gt; D[2019]
+            A--&gt; E[2020]
+            A--&gt; F[2021]
+            A--&gt; G[2022]
+            B--&gt;BB[10/286, 3.50%]
+            C--&gt;CC[14/415, 3.37% *]
+            D--&gt;DD[18/344, 5.23%]
+            E--&gt;EE[3/278, 1.08%]
+            F--&gt;FF[9/286, 3.15%]
+            G--&gt;GG[MusicCon22: 12/746, 1.61%]
 
-<h3 id="2017">2017</h3>
-<ul>
-  <li>AMS: <span class="contentstat">10/286 (3.50%)</span></li>
-  <li>SEM: <span class="contentstat">8/312 (2.56%)</span></li>
-  <li>SAM: <span class="contentstat">2/145 (1.38%)</span></li>
-</ul>
+
+</pre>
+
+<p>* Includes SMT</p>
 
 <h3 id="notes">Notes:</h3>
 <ul>
   <li>Statistics only include papers presented. Chairs, roundtables, special interest groups, posters, etc., are not included.</li>
 </ul>
+
+<script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@9/dist/mermaid.esm.min.mjs';
+      mermaid.initialize({ 
+        startOnLoad: true,         
+        theme: 'neutral',
+         fontFamily: 'Bitter, sans-serif',
+         fontSize: '15px'
+
+      });
+    </script>
+
 
   
     </main>
@@ -137,8 +165,8 @@ body, html {
   font-family: 'Bitter', serif;
   background-color: #FFFFF5;
   background-image: url("https://www.transparenttextures.com/patterns/brilliant.png");
-  padding-left:  7%;
-  padding-right:  8%;
+  padding-left:  1%;
+  padding-right:  1%;
 }
 
 .right 
@@ -377,8 +405,8 @@ ol, li, ul {
 }
 @media only screen and (max-width: 600px) {
   body, html {
-padding-left:  2%;
-padding-right:  2%;
+padding-left:  1%;
+padding-right:  1%;
 }
 .list {
   width:  100%;

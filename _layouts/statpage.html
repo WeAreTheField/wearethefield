@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<body>
+
+<link href="https://fonts.googleapis.com/css?family=Josefin+Slab" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+<!-- <link href="/assets/style2.css"> -->
+<link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Della+Respira&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Advent+Pro">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {% include head.html %}
+
+    {% include header.html %}
+
+    <main class="page-content" aria-label="Content">
+
+        {{ content }}
+  
+    </main>
+
+    {% include footer.html %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 0px; 
+  border-radius: 0px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #D9CED7; 
+  border-radius: 0px;
+  border: 0px solid 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #D9CED7; 
+}
+/* Firefox */
+  * {
+    scrollbar-width: auto;
+    }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 3px;
+  }
+
+
+header {
+
+  padding-left:  11.5%;
+/*  padding-right:  8%;
+*/}
+
+
+body, html {
+  height: 100%;
+  margin:  0;
+  font-family: 'Bitter', serif;
+  background-color: #FFFFF5;
+  background-image: url("https://www.transparenttextures.com/patterns/brilliant.png");
+  padding-left:  1%;
+  padding-right:  1%;
+}
+
+.right 
+{
+  float:  right;
+}
+
+.left 
+{
+  float:  left;
+}
+.parallax1 {
+  /* The image used */
+  background-color: transparent;
+/*background-image: url("https://www.transparenttextures.com/patterns/brilliant.png");
+*/ height: 40%; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+ /* background-repeat: no-repeat;
+  background-size: cover;*/
+}
+
+.parallax2 {
+  /* The image used */
+  background-color: transparent;
+/*background-image: url("https://www.transparenttextures.com/patterns/brilliant.png");
+*/ height: 30%; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+ /* background-repeat: no-repeat;
+  background-size: cover;*/
+
+}
+
+.stat {
+  /* The image used */
+  background-color: transparent;
+/*background-image: url("https://www.transparenttextures.com/patterns/brilliant.png");
+*/ height: absolute; 
+/*  width:  30%;*/
+  background-attachment: fixed;
+  background-position: center;
+  margin-left:  40%;
+  margin-top:  10px;
+
+}
+
+.paragraph
+{
+  height: absolute;
+  background-color: transparent;
+  margin-top:  140px;}
+
+
+
+.title {
+  color: #001849;
+  font-size: 45px;
+  margin: 0px;
+  font-family:  'Advent Pro', sans-serif;
+  font-weight:  bold;
+
+}
+
+h1
+{
+  color: #001849;
+  font-family:  'Advent Pro', sans-serif;
+  font-weight:  bold;
+  font-size: 25px;
+}
+
+h2 
+{
+  color: #001849;
+  font-family:  'Advent Pro', sans-serif;
+  font-weight:  bold;
+  font-size: 25px;
+  margin-top:  40px;
+}
+
+h3 
+{
+  color: #001849;
+  font-family:  'Advent Pro', sans-serif;
+  font-weight:  bold;
+  font-size: 22px;
+}
+p {
+
+  color: #332F2D;
+  font-size: 16px;
+  font-family: 'Bitter', serif;
+  line-height:  24px;
+
+}
+
+a {
+
+  color: #332F2D;
+  font-family: 'Bitter', serif;
+  font-size: 16px;
+
+}
+
+.emphasis {
+
+  color: #001849;
+  letter-spacing: 2px;
+
+}
+
+.post-content
+{
+  margin-top:  10px;
+  margin-bottom:  10px;
+}
+
+ol, li, ul {
+
+    color: #332F2D;
+    font-size: 16px;
+    line-height:  1.5em;
+    text-align:  justify;
+
+}
+
+.list {
+
+  width:  80%;
+
+}
+
+.material-symbols-outlined {
+
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+  
+}
+
+#myBtn {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: transparent; /* Set a background color */
+  color: #332F2D; /* Text color */
+/*  cursor: pointer;  Add a mouse pointer on hover 
+*/ padding: 10px; /* Some padding */
+  border-radius: 10px; /* Rounded corners */
+  font-size: 18px; /* Increase font size */
+   font-family: 'Bitter', serif;
+}
+
+/*#myBtn:hover {
+  background-color: #555;} /* Add a dark-grey background on hover */
+.links {
+  display:  flex;
+  color: #001849;
+  font-size: 30px;
+  margin: 0px;
+  font-family:  'Advent Pro', sans-serif;
+  font-weight:  bold;
+  display:  none;
+}
+
+.page-content {
+  margin-top:  120px;
+}
+
+.links.space-between {
+
+  justify-content: space-between;
+
+}
+.dropbtn {
+  background-color: transparent;
+  color: #001849;
+  font-size: 45px;
+  font-family:  'Advent Pro', sans-serif; 
+  padding: 1px;
+  border: none;
+  cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color:  #FFFFF5;
+  min-width: 160px;
+  box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: #001849;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-size:  20px !important;
+}
+
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+
+}
+
+.stat1, .stat2
+{
+  display:  block;
+}
+
+.one {
+height:  500px;
+width:  50%;
+border:  none;
+}
+
+.two {
+height:  500px;
+width:  49%;
+border:  none;
+}
+
+.three
+{
+height:  500px;
+width:  50%;
+border:  none;
+}
+
+@media only screen and (max-width: 900px) {
+
+  .one {
+height:  500px;
+width:  45%;
+border:  none;
+}
+
+.two {
+height:  500px;
+width:  45%;
+border:  none;
+}
+
+.three
+{
+height:  500px;
+width:  45%;
+border:  none;
+}
+}
+@media only screen and (max-width: 668px) {
+
+  .one {
+height:  500px;
+width:  48%;
+border:  none;
+}
+
+.two {
+height:  500px;
+width:  48%;
+border:  none;
+}
+
+.three
+{
+height:  500px;
+width:  48%;
+border:  none;
+}
+}
+@media only screen and (max-width: 494px) {
+
+  .one {
+height:  500px;
+width:  97%;
+border:  none;
+}
+
+.two {
+height:  500px;
+width:  97%;
+border:  none;
+}
+
+.three
+{
+height:  500px;
+width:  97%;
+border:  none;
+}
+}
+@media only screen and (max-width: 600px) {
+  body, html {
+padding-left:  2%;
+padding-right:  2%;
+}
+.list {
+  width:  100%;
+}
+
+ol, li, ul {
+    line-height:  1.5em;
+    text-align:  left;
+
+}
+}
+</style>
+  </body>
+
+</html>

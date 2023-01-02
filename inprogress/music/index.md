@@ -1,8 +1,18 @@
 ---
-layout: iframe
-title:  "Conferences"
+layout: page
+title:  "Musicology and Ethnomusicology"
 ---
-### Conferences 
+
+## Musicology and Ethnomusicology
+
+- [Conferences](#conferences)
+
+- [Publishing](#publishing)
+
+- [Granting](#granting)
+
+
+## Conferences 
 
 Currently have (see below):
 - Statistics on non-affiliated paper presentations at the three major musicology conferences (including SMT when inextricable from large data)
@@ -75,6 +85,23 @@ Need:
 - Statistics only include papers presented. Chairs, roundtables, special interest groups, posters, etc., are not included.
 
 
+## Publishing 
+
+Looking for:
+- Number of music books published by non-affiliated scholars in the past 5 years
+- Number of journal articles in the top 6 journals published by non-affiliated scholars in the past 5 years
+- Alternative publication methods both for non-affiliated and affiliated scholars
+
+
+## Granting 
+
+Looking for:
+- Number of grant opportunities specifically for non-affiliated scholars
+- Number of non-affiliated scholars who win the major music association-funded grants
+- Number of non-affiliated scholars who win state-wide humanities funded grants
+- Number of non-affiliated scholars who win federal humanities and arts funded grants
+
+
 <script type="module">
       import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@9/dist/mermaid.esm.min.mjs';
       mermaid.initialize({ 
@@ -85,3 +112,29 @@ Need:
 
       });
     </script>
+
+ <button onclick="topFunction()" id="myBtn" title="Go to top"><span class="material-symbols-outlined">
+vertical_align_top
+</span></button>
+
+<script>
+	// Get the button:
+let mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+</script>

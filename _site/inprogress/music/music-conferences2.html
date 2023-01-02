@@ -26,45 +26,53 @@
 </body>
 
 
-    <body>
-
-<title>We Are the Field</title>
-<header class="site-sidebar">
-    
-    
-         <nav class="site-nav">
-
-    <span class="title">We Are <br>the Field
-        <div class="dropdown">
-  <button class="dropbtn"><span class="material-symbols-outlined">
-expand_more
-</span></button>
-  <div class="dropdown-content">
-    <a href="https://wearethefield.github.io/wearethefield">Platform</a>
-    <a href="https://wearethefield.github.io/wearethefield/inprogress">Stats in Progress</a>
-    <a href="https://wearethefield.github.io/wearethefield/currentreports">Current Reports</a>
-    <a href="https://wearethefield.github.io/wearethefield/inquiries">Inquiries</a>
-  </div>
-</div></span>
-
-</header>
-</body>
-
     <main class="page-content" aria-label="Content">
 
-        <h2 id="contribute">Contribute</h2>
-<p>If interested in providing statistics about your field, or to discuss the project in general, please email <br />
-<span class="emphasis">WeAreTheField-at-protonmail-dot-com.</span></p>
+        <h3 id="conferences">Conferences</h3>
 
-<p>We also have a reading list. Join our <a href="https://www.zotero.org/groups/4860415/wearethefield">Zotero group</a> for the latest articles and studies on scholars outside of academia, and add any relevant literature.</p>
+<pre class="mermaid">
+pie title AMS 2017
+    "Non-affiliated" : 10
+    "Affiliated" : 276
 
-<h2 id="tech">Tech</h2>
+</pre>
 
-<p>We Are the Field is a decentralized collaborative project hosted on <a href="https://github.com/WeAreTheField/wearethefield">Github</a> powered by <a href="https://jekyllrb.com/">Jekyll</a>.</p>
+<pre class="mermaid">
+mindmap
+  root((SAM))
+    2017: 2/145, 1.38%
+    2018: 2/137, 1.46%
+    2019: 3/160, 1.88%
+    2020: 2/111, 1.80%
+    2021: 7/120, 5.83%
+    2022: 5/81, 6.17%
+</pre>
 
-<p>Posts are written in Markdown. Reports also utilize <a href="https://mermaid.js.org/">Mermaid.js</a> for diagramming and charts.</p>
+<pre class="mermaid">
+mindmap
+  root((SEM))
+    2017: 10/286, 3.50%
+    2018: 8/312, 2.56%
+    2019: 9/376, 2.39%
+    2020: 2/375, .0.53%
+    2021: 4/340, 1.18%
+    2022: MusicCon22: 12/746, 1.61%]
 
-<p>Collaborators will be invited to contribute changes or new content in Markdown using Git. We will also accept content via email in any file format, which will be edited into Markdown by others in the team.</p>
+
+    2017: 10/286, 3.50%
+    2018: 14/415, 3.37% *
+    2019: 18/344, 5.23%
+    2020: 3/278, 1.08%
+    2021: 9/286, 3.15%
+    2022: MusicCon22: 12/746, 1.61%
+</pre>
+<script type="module">
+
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@9/dist/mermaid.esm.min.mjs';
+  import mindmap from 'https://cdn.jsdelivr.net/npm/@mermaid-js/mermaid-mindmap@9/dist/mermaid-mindmap.esm.min.mjs';
+  await mermaid.registerExternalDiagrams([mindmap]);
+</script>
+
 
   
     </main>
@@ -91,7 +99,8 @@ expand_more
 ::-webkit-scrollbar-thumb {
   background: #D9CED7; 
   border-radius: 0px;
-  border: 0px solid 
+  border: 0px solid;
+  height:  70px;
 }
 
 /* Handle on hover */
@@ -114,8 +123,8 @@ body, html {
   font-family: 'Bitter', serif;
   background-color: #FFFFF5;
   background-image: url("https://www.transparenttextures.com/patterns/brilliant.png");
-  padding-left:  7%;
-  padding-right:  8%;
+  padding-left:  1%;
+  padding-right:  1%;
 }
 
 .right 
@@ -198,7 +207,6 @@ h2
   font-family:  'Advent Pro', sans-serif;
   font-weight:  bold;
   font-size: 25px;
-  margin-top:  40px;
 }
 
 h3 
@@ -230,6 +238,12 @@ a {
   color: #001849;
   letter-spacing: 2px;
 
+}
+.contentstat
+{
+  color: #ffffff;
+  background-color: #001849;
+  padding:  2px;
 }
 
 .post-content
@@ -293,8 +307,8 @@ ol, li, ul {
 }
 
 .page-content {
-  margin-top:  120px;
-}
+/*  margin-top:  120px;
+*/}
 
 .links.space-between {
 
@@ -347,93 +361,10 @@ ol, li, ul {
 {
   display:  block;
 }
-
-.one {
-height:  500px;
-width:  50%;
-border:  none;
-}
-
-.two {
-height:  500px;
-width:  49%;
-border:  none;
-}
-
-.three
-{
-height:  500px;
-width:  33%;
-border:  none;
-}
-
-@media only screen and (max-width: 900px) {
-
-  .one {
-height:  500px;
-width:  45%;
-border:  none;
-}
-
-.two {
-height:  500px;
-width:  45%;
-border:  none;
-}
-
-.three
-{
-height:  500px;
-width:  45%;
-border:  none;
-}
-}
-@media only screen and (max-width: 668px) {
-
-  .one {
-height:  500px;
-width:  48%;
-border:  none;
-}
-
-.two {
-height:  500px;
-width:  48%;
-border:  none;
-}
-
-.three
-{
-height:  500px;
-width:  48%;
-border:  none;
-}
-}
-@media only screen and (max-width: 494px) {
-
-  .one {
-height:  500px;
-width:  97%;
-border:  none;
-}
-
-.two {
-height:  500px;
-width:  97%;
-border:  none;
-}
-
-.three
-{
-height:  500px;
-width:  97%;
-border:  none;
-}
-}
 @media only screen and (max-width: 600px) {
   body, html {
-padding-left:  2%;
-padding-right:  2%;
+padding-left:  1%;
+padding-right:  1%;
 }
 .list {
   width:  100%;

@@ -52,11 +52,153 @@ expand_more
 
     <main class="page-content" aria-label="Content">
 
-        <h2>Musicology and Ethnomusicology</h2>
+        <h2 id="musicology-and-ethnomusicology">Musicology and Ethnomusicology</h2>
 
-<iframe class="one" src="music-conferences.html"></iframe>
-<iframe class="two" src="music-publishing.html"></iframe>
-<iframe class="three" src="music-granting.html"></iframe>
+<ul>
+  <li>
+    <p><a href="#conferences">Conferences</a></p>
+  </li>
+  <li>
+    <p><a href="#publishing">Publishing</a></p>
+  </li>
+  <li>
+    <p><a href="#granting">Granting</a></p>
+  </li>
+</ul>
+
+<h2 id="conferences">Conferences</h2>
+
+<p>Currently have (see below):</p>
+<ul>
+  <li>Statistics on non-affiliated paper presentations at the three major musicology conferences (including SMT when inextricable from large data)</li>
+</ul>
+
+<p>Need:</p>
+<ul>
+  <li>Statistics on IASPM and other music conferences, like Jazz-specific conferences</li>
+  <li>Would ideally like any possible statistics on amount of non-affiliated scholars that submit papers to conferences</li>
+</ul>
+
+<h3 id="amount-of-independentnon-affiliated-scholars-presenting-papers-at-conferences-see-note">Amount of independent/non-affiliated scholars presenting papers at conferences (see note):</h3>
+<pre class="mermaid">
+            graph TD
+            A[SAM] 
+            A--&gt; B[2017]
+            A--&gt; C[2018]
+            A--&gt; D[2019]
+            A--&gt; E[2020]
+            A--&gt; F[2021]
+            A--&gt; G[2022]
+            B--&gt;BB[2/145, 1.38%]
+            C--&gt;CC[2/137, 1.46%]
+            D--&gt;DD[3/160, 1.88%]
+            E--&gt;EE[2/111, 1.80%]
+            F--&gt;FF[7/120, 5.83%]
+            G--&gt;GG[5/81, 6.17%]
+
+    </pre>
+
+<pre class="mermaid">
+            graph TD
+            A[SEM] 
+            A--&gt; B[2017]
+            A--&gt; C[2018]
+            A--&gt; D[2019]
+            A--&gt; E[2020]
+            A--&gt; F[2021]
+            A--&gt; G[2022]
+            B--&gt;BB[8/312, 2.56%]
+            C--&gt;CC[4/299, 1.34%]
+            D--&gt;DD[9/376, 2.39%]
+            E--&gt;EE[2/375, .0.53%]
+            F--&gt;FF[4/340, 1.18%]
+            G--&gt;GG[MusicCon22: 12/746, 1.61%]
+
+</pre>
+
+<pre class="mermaid">
+            graph TD
+            A[AMS] 
+            A--&gt; B[2017]
+            A--&gt; C[2018]
+            A--&gt; D[2019]
+            A--&gt; E[2020]
+            A--&gt; F[2021]
+            A--&gt; G[2022]
+            B--&gt;BB[10/286, 3.50%]
+            C--&gt;CC[14/415, 3.37% *]
+            D--&gt;DD[18/344, 5.23%]
+            E--&gt;EE[3/278, 1.08%]
+            F--&gt;FF[9/286, 3.15%]
+            G--&gt;GG[MusicCon22: 12/746, 1.61%]
+
+
+</pre>
+
+<p>* Includes SMT</p>
+
+<h3 id="notes">Notes:</h3>
+<ul>
+  <li>Statistics only include papers presented. Chairs, roundtables, special interest groups, posters, etc., are not included.</li>
+</ul>
+
+<h2 id="publishing">Publishing</h2>
+
+<p>Looking for:</p>
+<ul>
+  <li>Number of music books published by non-affiliated scholars in the past 5 years</li>
+  <li>Number of journal articles in the top 6 journals published by non-affiliated scholars in the past 5 years</li>
+  <li>Alternative publication methods both for non-affiliated and affiliated scholars</li>
+</ul>
+
+<h2 id="granting">Granting</h2>
+
+<p>Looking for:</p>
+<ul>
+  <li>Number of grant opportunities specifically for non-affiliated scholars</li>
+  <li>Number of non-affiliated scholars who win the major music association-funded grants</li>
+  <li>Number of non-affiliated scholars who win state-wide humanities funded grants</li>
+  <li>Number of non-affiliated scholars who win federal humanities and arts funded grants</li>
+</ul>
+
+<script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@9/dist/mermaid.esm.min.mjs';
+      mermaid.initialize({ 
+        startOnLoad: true,         
+        theme: 'neutral',
+         fontFamily: 'Bitter, sans-serif',
+         fontSize: '15px'
+
+      });
+    </script>
+
+<p><button onclick="topFunction()" id="myBtn" title="Go to top"><span class="material-symbols-outlined">
+vertical_align_top
+</span></button></p>
+
+<script>
+	// Get the button:
+let mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+</script>
+
+
   
     </main>
 
@@ -99,22 +241,14 @@ expand_more
     width: 3px;
   }
 
-
-header {
-
-  padding-left:  11.5%;
-/*  padding-right:  8%;
-*/}
-
-
 body, html {
   height: 100%;
   margin:  0;
   font-family: 'Bitter', serif;
   background-color: #FFFFF5;
   background-image: url("https://www.transparenttextures.com/patterns/brilliant.png");
-  padding-left:  1%;
-  padding-right:  1%;
+  padding-left:  7%;
+  padding-right:  8%;
 }
 
 .right 
@@ -362,7 +496,7 @@ border:  none;
 .three
 {
 height:  500px;
-width:  50%;
+width:  33%;
 border:  none;
 }
 

@@ -97,9 +97,9 @@ Looking for:
 
 Looking for:
 - Number of grant opportunities specifically for non-affiliated scholars
-- Number of non-affiliated scholars who win the major music association-funded grants
-- Number of non-affiliated scholars who win state-wide humanities funded grants
-- Number of non-affiliated scholars who win federal humanities and arts funded grants
+- Number of non-affiliated scholars who are awarded the major music association-funded grants
+- Number of non-affiliated scholars who are awarded state-wide humanities funded grants
+- Number of non-affiliated scholars who are awarded federal humanities and arts funded grants
 
 
 <script type="module">

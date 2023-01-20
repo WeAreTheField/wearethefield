@@ -94,7 +94,7 @@ Currently have:
 
 Analyzing # of TT and non-affiliated and North American authors
 
-### Breakdown or Duke, OUP, and Chicago, combined
+### Breakdown of Duke, OUP, and Chicago authors, combined
 <pre class="mermaid">
   pie
   "Tenured or TT" : 281

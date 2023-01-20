@@ -22,7 +22,7 @@ Need:
 - Would ideally like any possible statistics on amount of non-affiliated scholars that submit papers to conferences
 
 
-### Amount of independent/non-affiliated scholars presenting papers at conferences (see note):
+### Number of independent/non-affiliated scholars presenting papers at conferences (see note):
  <pre class="mermaid">
             graph TD
             A[SAM] 
@@ -84,14 +84,29 @@ Need:
 ### Notes: 
 - Statistics only include papers presented. Chairs, roundtables, special interest groups, posters, etc., are not included.
 
-
 ## Publishing 
+
+Currently have:
+- All music titles from 2017–2023 from:
+  - Duke University Press
+  - Oxford University Press
+  - Chicago University Press
+
+Analyzing # of TT and non-affiliated and North American authors
+
+### Breakdown or Duke, OUP, and Chicago, combined
+<pre class="mermaid">
+  pie
+  "Tenured or TT" : 281
+  "No affiliation, non-PhD" : 50
+  "Institutional affiliation, non-TT" : 18
+  "PhD holder, no affiliation" : 5
+</pre>
 
 Looking for:
 - Number of music books published by non-affiliated scholars in the past 5 years
 - Number of journal articles in the top 6 journals published by non-affiliated scholars in the past 5 years
 - Alternative publication methods both for non-affiliated and affiliated scholars
-
 
 ## Granting 
 
@@ -106,9 +121,10 @@ Looking for:
       import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@9/dist/mermaid.esm.min.mjs';
       mermaid.initialize({ 
         startOnLoad: true,         
-        theme: 'neutral',
+        // theme: 'neutral',
          fontFamily: 'Bitter, sans-serif',
          fontSize: '15px'
+
 
       });
     </script>

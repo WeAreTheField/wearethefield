@@ -90,7 +90,7 @@ Currently have:
 - All music titles from 2017–2023 from:
   - Duke University Press
   - Oxford University Press
-  - Chicago University Press
+  - University of Chicago Press
 
 Analyzing # of TT and non-affiliated and North American authors
 

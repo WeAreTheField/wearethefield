@@ -91,16 +91,23 @@ Currently have:
   - Duke University Press
   - Oxford University Press
   - University of Chicago Press
+  - University of North Carolina Press
+  - University of Michigan Press
+  - University of California Press
+  - University of Mississippi Press
+  - University of Illinois Press
+  - MIT Press
+  - University of Indiana Press
 
 Analyzing # of TT and non-affiliated and North American authors
 
-### Breakdown of Duke, OUP, and Chicago authors, combined
+### Breakdown of authors, combined
 <pre class="mermaid">
   pie
-  "Tenured or TT" : 281
-  "No affiliation, non-PhD" : 50
-  "Institutional affiliation, non-TT" : 18
-  "PhD holder, no affiliation" : 5
+  "Tenured or TT" : 513
+  "No affiliation, non-PhD" : 117
+  "Institutional affiliation, non-TT" : 32
+  "PhD holder, no affiliation" : 11
 </pre>
 
 Looking for:

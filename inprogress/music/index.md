@@ -97,17 +97,17 @@ Currently have:
   - University of Mississippi Press
   - University of Illinois Press
   - MIT Press
-  - University of Indiana Pressgv
+  - Indiana University Press
 
 Analyzing # of TT and non-affiliated and North American authors
 
 ### Breakdown of authors, combined
 <pre class="mermaid">
   pie
-  "Tenured or TT (513/673)" : 513
-  "No affiliation, non-PhD (117/673)" : 117
-  "Institutional affiliation, non-TT (32/673)" : 32
-  "PhD holder, no affiliation (11/673)" : 11
+  "Tenured or TT (513/673)" : 517
+  "No affiliation, non-PhD (117/673)" : 94
+  "Institutional affiliation, non-TT (32/673)" : 23
+  "PhD holder, no affiliation (11/673)" : 7
 </pre>
 
 Looking for:

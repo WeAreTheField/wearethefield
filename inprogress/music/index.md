@@ -104,14 +104,13 @@ Analyzing # of TT and non-affiliated and North American authors
 ### Breakdown of authors, combined
 <pre class="mermaid">
   pie
-  "Tenured or TT (513/673)" : 517
-  "No affiliation, non-PhD (117/673)" : 94
-  "Institutional affiliation, non-TT (32/673)" : 23
-  "PhD holder, no affiliation (11/673)" : 7
+  "Tenured or TT (517/641)" : 517
+  "No affiliation, non-PhD (94/641)" : 94
+  "Institutional affiliation, non-TT (23/641)" : 23
+  "PhD holder, no affiliation (7/641)" : 7
 </pre>
 
 Looking for:
-- Number of music books published by non-affiliated scholars in the past 5 years
 - Number of journal articles in the top journals published by non-affiliated scholars in the past 5 years
 - Alternative publication methods both for non-affiliated and affiliated scholars
 

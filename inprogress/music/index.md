@@ -110,6 +110,12 @@ Analyzing # of TT and non-affiliated and North American authors
   "PhD holder, no affiliation (7/641)" : 7
 </pre>
 
+## Key
+Tenured or TT (517/641): 517
+No affiliation, non-PhD (94/641): 94
+Institutional affiliation, non-TT (23/641): 23
+PhD holder, no affiliation (7/641) : 7
+
 Looking for:
 - Number of journal articles in the top journals published by non-affiliated scholars in the past 5 years
 - Alternative publication methods both for non-affiliated and affiliated scholars

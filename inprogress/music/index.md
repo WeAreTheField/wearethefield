@@ -111,13 +111,13 @@ Analyzing # of TT and non-affiliated and North American authors
 </pre>
 
 ## Key
-Tenured or TT (517/641): 517
+Tenured or TT (517/641): 81%
 
-No affiliation, non-PhtD (94/641): 94
+No affiliation, non-PhtD (94/641): 15%
 
-Institutional affiliation, non-TT (23/641): 23
+Institutional affiliation, non-TT (23/641): 4%
 
-PhD holder, no affiliation (7/641) : 7
+PhD holder, no affiliation (7/641) : 1%
 
 Looking for:
 - Number of journal articles in the top journals published by non-affiliated scholars in the past 5 years

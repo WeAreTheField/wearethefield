@@ -94,7 +94,8 @@ expand_more
       &lt;/a&gt;
   &lt;div class="b-meta-data"&gt;
       &lt;a href="https://www.dukeupress.edu/soundscapes-of-liberation"&gt;By&lt;/a&gt;
-      &lt;a class="author" href="https://www.dukeupress.edu/explore-subjects/browse?AuID=3908847"&gt;Celeste Day  Moore&lt;/a&gt;
+      &lt;a class="author" href="https://www.dukeupress.edu/explore-subjects/browse?
+      AuID=3908847"&gt;Celeste Day  Moore&lt;/a&gt;
   &lt;/div&gt;
 </code></pre></div>            </div>
           </li>
@@ -122,30 +123,26 @@ expand_more
       <li>
         <p>This is the basic PHP script that I, cobbled together from many free unlicensed sources on the internet and the experts at Stackverflow, came up with to parse HTML codes full of authors and extract their names:</p>
 
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  &lt;?php
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      &lt;?php
 
-      $html = &lt;&lt;&lt;HTML
-          [INSERT HTML CODE HERE]
-      HTML;
+          $html = &lt;&lt;&lt;HTML
 
-      $doc = new DOMDocument();
-      $doc-&gt;loadHTML($html);
-      foreach($doc-&gt;getElementsByTagName('a') as $a) {
- 				if ($a-&gt;getAttribute('class') === 'author) {
-  			$parts = explode('?', $a-&gt;getAttribute('href'), 2);
-  			parse_str($parts[0], $output);
+              [INSERT HTML CODE HERE]
+
+          HTML;
+
+                      $doc = new DOMDocument();
+                      $doc-&gt;loadHTML($html);
+                      foreach($doc-&gt;getElementsByTagName('a') as $a) {
+                      if ($a-&gt;getAttribute('class') === 'author) {
+                      $parts = explode('?', $a-&gt;getAttribute('href'), 2);
+                      parse_str($parts[0], $output);
+                      echo '' . $a-&gt;nodeValue . ", \n ";
+ 					}
+              }
+              ?&gt;
 </code></pre></div>        </div>
-
-  			echo ‘’ . $a-&gt;nodeValue . “, \n “;
       </li>
-    </ul>
-
- 				}
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>         }
-     ?&gt;
-</code></pre></div>    </div>
-
-    <ul>
       <li>This code is saying, “this is PHP!” and then, “we’re about to look at an HTML code!”, and then look at “getelementsbytagname”–this is saying the HTML tag the script is looking for is ‘a.’ Then look ahead to ‘getAttribute(‘class’)–the class is “author.” The rest of the code explains how to extract the name, and what format the name should be in the output. The part starting with “echo” tells the output to put a comma at the end of the name, which will come in handy later.</li>
       <li>
         <p>So, basically, you put that code into a blank file in Text Editor or Notepad, something basic, or Word if you don’t have that, and you save it as a PHP extension with some type of name, I use “test.php”. I also put this little note to myself (notes that shouldn’t be read in the actual code you can put between &lt; ! – and – &gt; (without spaces!))</p>
@@ -180,20 +177,16 @@ expand_more
 
       HTML;
 
-      $doc = new DOMDocument();
-      $doc-&gt;loadHTML($html);
-      foreach($doc-&gt;getElementsByTagName('p') as $a) {
-      $parts = explode('?', $a-&gt;getAttribute('p'), 2);
+                  $doc = new DOMDocument();
+                  $doc-&gt;loadHTML($html);
+                  foreach($doc-&gt;getElementsByTagName('p') as $a) {
+                  $parts = explode('?', $a-&gt;getAttribute('p'), 2);
+                  echo '' . $a-&gt;nodeValue . ", \n ";
+ 					}
+          }
+          ?&gt;
 </code></pre></div>            </div>
           </li>
-        </ul>
-
-  			echo $a-&gt;nodeValue . “\n “;
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>          }
-          ?&gt;
-</code></pre></div>        </div>
-
-        <ul>
           <li>
             <p>For example, this script only parses authors if defined by a DIV or LI class. Will need to copy and export to Excel and dedupe. (Used on U Michigan Press)</p>
 

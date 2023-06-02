@@ -33,7 +33,8 @@ To follow, you'll need a basic understanding of the Command Line, Excel, and the
 					</a>
 				<div class="b-meta-data">
 					<a href="https://www.dukeupress.edu/soundscapes-of-liberation">By</a>
-					<a class="author" href="https://www.dukeupress.edu/explore-subjects/browse?AuID=3908847">Celeste Day  Moore</a>
+					<a class="author" href="https://www.dukeupress.edu/explore-subjects/browse?
+					AuID=3908847">Celeste Day  Moore</a>
 				</div>
 
 		- In this example from Duke University Press, the author is always given as a link (the HTML tag 'a'), and the "class" of link is "author." That means that if we want to collect all the authors in the HTML code, we can write a code that looks for every < a class = "author" > and extracts just the author's name! 
@@ -47,25 +48,24 @@ To follow, you'll need a basic understanding of the Command Line, Excel, and the
 		- But I've gotten ahead of myself. Just wanted to show you that you're totally capable of doing what I'm about to show you.
 	- This is the basic PHP script that I, cobbled together from many free unlicensed sources on the internet and the experts at Stackverflow, came up with to parse HTML codes full of authors and extract their names:
 
-			<?php
+				<?php
 
-				$html = <<<HTML
-					[INSERT HTML CODE HERE]
-				HTML;
+					$html = <<<HTML
 
-				$doc = new DOMDocument();
-				$doc->loadHTML($html);
-				foreach($doc->getElementsByTagName('a') as $a) {
-    				if ($a->getAttribute('class') === 'author) {
-        			$parts = explode('?', $a->getAttribute('href'), 2);
-        			parse_str($parts[0], $output);
+						[INSERT HTML CODE HERE]
 
-        			echo '' . $a->nodeValue . ", \n ";
+					HTML;
 
-
-    				}
-				}
-			?>
+								$doc = new DOMDocument();
+								$doc->loadHTML($html);
+								foreach($doc->getElementsByTagName('a') as $a) {
+								if ($a->getAttribute('class') === 'author) {
+								$parts = explode('?', $a->getAttribute('href'), 2);
+								parse_str($parts[0], $output);
+								echo '' . $a->nodeValue . ", \n ";
+    					}
+						}
+						?>
 
 	- This code is saying, "this is PHP!" and then, "we're about to look at an HTML code!", and then look at "getelementsbytagname"--this is saying the HTML tag the script is looking for is 'a.' Then look ahead to 'getAttribute('class')--the class is "author." The rest of the code explains how to extract the name, and what format the name should be in the output. The part starting with "echo" tells the output to put a comma at the end of the name, which will come in handy later.
 	- So, basically, you put that code into a blank file in Text Editor or Notepad, something basic, or Word if you don't have that, and you save it as a PHP extension with some type of name, I use "test.php". I also put this little note to myself (notes that shouldn't be read in the actual code you can put between < ! -- and -- > (without spaces!))
@@ -84,7 +84,7 @@ To follow, you'll need a basic understanding of the Command Line, Excel, and the
 
 	- There are so many different versions of this script that you can run for data that is formatted differently.
 		- For example, this script parses any book data if defined by pargraph tags. Will need to copy and export to Excel and filter to just see authors and delete extra data and dedupe. (Used on OUP.)
-				
+
 				<?php
 
 					$html = <<<HTML
@@ -92,14 +92,14 @@ To follow, you'll need a basic understanding of the Command Line, Excel, and the
 
 					HTML;
 
-					$doc = new DOMDocument();
-					$doc->loadHTML($html);
-					foreach($doc->getElementsByTagName('p') as $a) {
-					$parts = explode('?', $a->getAttribute('p'), 2);
-
-        			echo $a->nodeValue . "\n ";
-					}
-					?>
+								$doc = new DOMDocument();
+								$doc->loadHTML($html);
+								foreach($doc->getElementsByTagName('p') as $a) {
+								$parts = explode('?', $a->getAttribute('p'), 2);
+								echo '' . $a->nodeValue . ", \n ";
+    					}
+						}
+						?>
 
 		- For example, this script only parses authors if defined by a DIV or LI class. Will need to copy and export to Excel and dedupe. (Used on U Michigan Press)
 

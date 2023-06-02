@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<body>
+
+<link href="https://fonts.googleapis.com/css?family=Josefin+Slab" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+<!-- <link href="/assets/style2.css"> -->
+<link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Della+Respira&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Advent+Pro">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<html lang="en">
+
+  <body>
+<head>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<title>We Are the Field</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- <link rel="stylesheet" href="/assets/style2.css">
+ --></head>
+</body>
+
+
+    <body>
+
+<title>We Are the Field</title>
+<header class="site-sidebar">
+    
+    
+         <nav class="site-nav">
+
+    <span class="title">We Are <br>the Field
+        <div class="dropdown">
+  <button class="dropbtn"><span class="material-symbols-outlined">
+expand_more
+</span></button>
+  <div class="dropdown-content">
+    <a href="https://wearethefield.github.io/wearethefield">Platform</a>
+    <a href="https://wearethefield.github.io/wearethefield/inprogress">Stats in Progress</a>
+    <a href="https://wearethefield.github.io/wearethefield/currentreports">Current Reports</a>
+    <a href="https://wearethefield.io/documentation">Documentation</a>
+    <a href="https://wearethefield.github.io/wearethefield/inquiries">Inquiries</a>
+  </div>
+</div></span>
+
+</header>
+</body>
+
+    <main class="page-content" aria-label="Content">
+
+        <h2 id="documentation">Documentation</h2>
+
+<p>This is a very rough outline of the current workflow for collecting authors from publisher websites and conference programs, and how we are analyzing this data.</p>
+
+<p>This is a very low-tec way of text mining and analysis, processes that have been formed out of convenience. This is not a definitive method for doing this work by any means.</p>
+
+<p>To follow, you’ll need a basic understanding of the Command Line, Excel, and the ability to understand what a PHP script is doing (not the ability to write PHP).</p>
+
+<h1 id="collecting-book-authors">Collecting Book Authors</h1>
+<ol>
+  <li>Find a way to download a data set from the publisher website
+    <ul>
+      <li>We’ve had to be creative to collect and parse author names from publisher websites. Rather than copy/pasting each author name (which you’re totally welcome to do), consider creating your own archive of the publisher website’s title and author data for your particular topic. To do this, do the following:</li>
+    </ul>
+    <ul>
+      <li>Navigate to the publisher website</li>
+      <li>Find either the search/browse function and search for or browse books in your field from the past 5 years.
+        <ul>
+          <li>This doesn’t work the same way on all websites. If you’re able to limit your search to 5 years, that’s great. If not, you’ll have to remember which year from the data will be your limit.</li>
+        </ul>
+      </li>
+      <li>When your search returns, note if all the books in your query are in one list, or if there are multiple pages.
+        <ul>
+          <li>If all results are on one page, right click on the page, and click “Save As.” Where it asks for file format, select “HTML” from the dropdown. Save to a directory where you’ll be keeping author data.</li>
+          <li>If books are on multiple pages, I suggest creating one master HTML document rather than a bunch of documents. Right click on the page of results and click “View Page Source.” A bunch of code will pop up in a new window. Copy and paste all of that code into a basic text editor, such as Notepad or Text Edit, and at a last resort, Microsoft Word. Repeat this step for each page of results and compile them into one document. Save that document as an HTML file in a dreictory where you’ll be keeping author data.</li>
+        </ul>
+      </li>
+      <li>Now you have a bunch of HTML! What are you going to do with that?
+        <ul>
+          <li>What we need to do is use a script to PARSE all that information to extract all the authors.</li>
+          <li>In order to do that, we need to look at how the information is stored on the website to see how we should extract authors.</li>
+          <li>
+            <p>Let’s look at this example:</p>
+
+            <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  &lt;div class="book-info"&gt;
+      &lt;a href="https://www.dukeupress.edu/soundscapes-of-liberation"&gt;
+          &lt;h3&gt;Soundscapes of Liberation&lt;/h3&gt;
+          &lt;h4&gt;African American Music in Postwar France&lt;/h4&gt;
+      &lt;/a&gt;
+  &lt;div class="b-meta-data"&gt;
+      &lt;a href="https://www.dukeupress.edu/soundscapes-of-liberation"&gt;By&lt;/a&gt;
+      &lt;a class="author" href="https://www.dukeupress.edu/explore-subjects/browse?AuID=3908847"&gt;Celeste Day  Moore&lt;/a&gt;
+  &lt;/div&gt;
+</code></pre></div>            </div>
+          </li>
+          <li>In this example from Duke University Press, the author is always given as a link (the HTML tag ‘a’), and the “class” of link is “author.” That means that if we want to collect all the authors in the HTML code, we can write a code that looks for every &lt; a class = “author” &gt; and extracts just the author’s name!</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Put that data set through a code that extracts just the author names and cleans it up
+    <ul>
+      <li>I’m not a data scientist. But you can use your scholarly research skills to find some easy-to-run code if you know how to Google efficiently. To save time, I’ll introduce the basic code I used to extract authors, and how you can run it as well. I’ll also demonstrate how I rewrote the code for different types of author data storage in publisher website HMTL code.</li>
+    </ul>
+    <ul>
+      <li>Because I have some familiarity with the coding language “PHP,” I decided to use PHP for this solution. But there are definitely other languages (Python, for example) that might be more efficient.</li>
+      <li>Your computer probably has PHP enabled. To run a PHP script, all you do is open your Command Line (Terminal on Mac or CommandPrompt (or whatever shell you use on Windows–see here for examples [add link]))
+        <ul>
+          <li>Then, you navigate to where your php script lives by changing the directory (type ‘cd’ into the prompt followed by where the php file lives).
+            <ul>
+              <li>Then, you simply type “php filename.php,” and it runs!</li>
+            </ul>
+          </li>
+          <li>But I’ve gotten ahead of myself. Just wanted to show you that you’re totally capable of doing what I’m about to show you.</li>
+        </ul>
+      </li>
+      <li>
+        <p>This is the basic PHP script that I, cobbled together from many free unlicensed sources on the internet and the experts at Stackverflow, came up with to parse HTML codes full of authors and extract their names:</p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  &lt;?php
+
+      $html = &lt;&lt;&lt;HTML
+          [INSERT HTML CODE HERE]
+      HTML;
+
+      $doc = new DOMDocument();
+      $doc-&gt;loadHTML($html);
+      foreach($doc-&gt;getElementsByTagName('a') as $a) {
+ 				if ($a-&gt;getAttribute('class') === 'author) {
+  			$parts = explode('?', $a-&gt;getAttribute('href'), 2);
+  			parse_str($parts[0], $output);
+</code></pre></div>        </div>
+
+  			echo ‘’ . $a-&gt;nodeValue . “, \n “;
+      </li>
+    </ul>
+
+ 				}
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>         }
+     ?&gt;
+</code></pre></div>    </div>
+
+    <ul>
+      <li>This code is saying, “this is PHP!” and then, “we’re about to look at an HTML code!”, and then look at “getelementsbytagname”–this is saying the HTML tag the script is looking for is ‘a.’ Then look ahead to ‘getAttribute(‘class’)–the class is “author.” The rest of the code explains how to extract the name, and what format the name should be in the output. The part starting with “echo” tells the output to put a comma at the end of the name, which will come in handy later.</li>
+      <li>
+        <p>So, basically, you put that code into a blank file in Text Editor or Notepad, something basic, or Word if you don’t have that, and you save it as a PHP extension with some type of name, I use “test.php”. I also put this little note to myself (notes that shouldn’t be read in the actual code you can put between &lt; ! – and – &gt; (without spaces!))</p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  &lt; ! -- Use this script after downloading html(s) of book results. 
+  Compile author/book details ONLY no other html into one html file and run script on the code.
+  This script only parses authors if defined by a link class. Will need to copy and export to
+  Excel and dedupe. Used on Duke University Press -- &gt;
+</code></pre></div>        </div>
+      </li>
+      <li>When you have HTML that you want to run through the code, copy and paste the entire code (yes it’s a lot but I promise your computer can do it and it’s easier than you finding all the parts you want) into the INSERT HTML CODE HERE section. Save the file (but be sure to erase the HTML after you’re done with the next steps so that you have a clean slate for the next batch of author names)</li>
+      <li>Then go to your Command Line, locate the file you just created (cd) and then type “php filename.php”
+        <ul>
+          <li>If the script was unsuccessful, you’ll see a bunch of warnings and you won’t see any authors at all.</li>
+          <li>If the script was successful, you’ll probably still see warnings, because the script is also trying to parse parts of the code that have nothing to do with our script, and also becuase there may be other non-HTML elements in the code.
+            <ul>
+              <li>That’s fine, ignore that and scroll til you see a list of names.</li>
+              <li>Those are all the author names! Find the first or last name, scroll down/up and select all those names. Copy and paste those author names into Excel, Google Sheets, Numbers, etc, just into a blank file for now. You can format that list of names later, just don’t lose them.</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>There are so many different versions of this script that you can run for data that is formatted differently.
+        <ul>
+          <li>
+            <p>For example, this script parses any book data if defined by pargraph tags. Will need to copy and export to Excel and filter to just see authors and delete extra data and dedupe. (Used on OUP.)</p>
+
+            <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  &lt;?php
+
+      $html = &lt;&lt;&lt;HTML
+
+
+      HTML;
+
+      $doc = new DOMDocument();
+      $doc-&gt;loadHTML($html);
+      foreach($doc-&gt;getElementsByTagName('p') as $a) {
+      $parts = explode('?', $a-&gt;getAttribute('p'), 2);
+</code></pre></div>            </div>
+          </li>
+        </ul>
+
+  			echo $a-&gt;nodeValue . “\n “;
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>          }
+          ?&gt;
+</code></pre></div>        </div>
+
+        <ul>
+          <li>
+            <p>For example, this script only parses authors if defined by a DIV or LI class. Will need to copy and export to Excel and dedupe. (Used on U Michigan Press)</p>
+
+            <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  &lt;?php
+
+      $html = &lt;&lt;&lt;HTML
+
+
+      HTML;
+
+                  $doc = new DOMDocument();
+                  $doc-&gt;loadHTML($html);
+                  foreach($doc-&gt;getElementsByTagName('span') as $a) 
+                  { if ($a-&gt;getAttribute('class') === '[author') 
+                  { $parts = explode('?', $a-&gt;getAttribute('span'), 0); 
+                  parse_str($parts[0], $output);
+                  echo '' . $a-&gt;nodeValue . ", \n ";
+ 					}
+          }
+          ?&gt;
+</code></pre></div>            </div>
+          </li>
+          <li>
+            <p>And you can rewrite the script to work for any kind of author tag or formatting.</p>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<h1 id="collecting-presenters">Collecting Presenters</h1>
+<ol>
+  <li>Unfortunately, collecting presenters is not as easy as downloading a data set usually. Typically, you will need to manually go through conference programs as PDFs.
+    <ul>
+      <li>We are exploring easier ways of exporting with data collecting/scraping from Sched.</li>
+    </ul>
+  </li>
+  <li>As you go through programs, collect first/last names and institutional affiliation (at the time) in an Excel spreadsheet</li>
+</ol>
+
+<h1 id="analyzing-affiliation">Analyzing Affiliation</h1>
+<ul>
+  <li>Once you have the data for names, let’s put it into Excel/Google Sheets
+    <ul>
+      <li>For Presenters, just enter this information in manually as you scan through the programs.</li>
+    </ul>
+  </li>
+</ul>
+
+<ol>
+  <li>First, make a table that has columns for all of the pertinent information that you need.
+    <ul>
+      <li>Necessary columns include:
+        <ul>
+          <li>Name
+            <ul>
+              <li>Names have been generated from the php script! Just copy and past them here.</li>
+            </ul>
+          </li>
+          <li>Tenure Track
+            <ul>
+              <li>I think it’s handy just to make this column a y/n.</li>
+              <li>I generate this information from a quick Google search, which I’ll explain more below.</li>
+            </ul>
+          </li>
+          <li>North America
+            <ul>
+              <li>Again, simple y/n column.</li>
+              <li>I generate this information from a quick Google search, which I’ll explain more below.</li>
+            </ul>
+          </li>
+          <li>Job
+            <ul>
+              <li>If not a tenure track professor, I use this column to write their job or status, like “independent scholar,” “journalist,” however the scholar chooses to present themselves.
+                <ul>
+                  <li>Usually this comes from author bios, but sometimes I generate this information from a quick Google search, which I’ll explain more below.</li>
+                  <li>You can be descriptive in this column, generally it helps you do the qualitative part of this analysis, it’s not factored into the quantitative equations in the sheet.</li>
+                  <li>This can also be a good column to note if a non-tenure track scholar holds a PhD</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>Link
+            <ul>
+              <li>For “Link,” I write an equation that makes a Google search link for each name so that it cuts down on the time you actually have to type into Google and search people.
+                <ul>
+                  <li>On Excel, this formula is: =HYPERLINK(CONCATENATE(“https:// www. google .com/search?q=”,[CELL WITH NAME],””)) [without spaces]</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>Suggested columns:
+        <ul>
+          <li>Notes
+            <ul>
+              <li>General notes for yourself, can be anything.</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>After some light Googling, you can make the determination of what job they have, whether or not they are tenured, etc.
+    <ul>
+      <li>Remember to keep any important data, like if they are in an associated scholarly field, left academia, etc., anything that may be pertinent for later data collection. You can use a broad “notes” column or more specific columns, whatever makes more sense to your data and subject.</li>
+    </ul>
+  </li>
+  <li>Record that data to the best of your ability
+    <ul>
+      <li>Also important to record if the scholar in question has a PhD for another layer of granularity.</li>
+    </ul>
+  </li>
+  <li>Calculations
+    <ul>
+      <li>From the above information, you now how the power to find the following data points:</li>
+    </ul>
+    <ul>
+      <li>Total number of authors/presenters</li>
+      <li>Total number of authors/presenters from North America</li>
+      <li>Total tenure track professors</li>
+      <li>Tenure track professors from North America</li>
+      <li>Non-tenure track from North America
+        <ul>
+          <li>Non-tenure track but university affiliated</li>
+        </ul>
+      </li>
+      <li>Non-tenure track Total</li>
+      <li>Number of totally independent scholars
+        <ul>
+          <li>This is the number of North American non-tenure track scholars who are not affiliated with a university.</li>
+        </ul>
+      </li>
+      <li>Number of PhD holders from North America, non-tenure track, non-affiliated</li>
+      <li>Number of totally independent scholars without a PhD</li>
+    </ul>
+
+    <p>From this data, you can calculate:</p>
+    <ul>
+      <li>Percentage of totally independent authors/presenters from North America</li>
+      <li>Percentage of non-tenure track, non-traditionally affiliated authors/presenters from North America</li>
+      <li>Percentage of PhD authors/presenters from North America who are unaffiliated</li>
+    </ul>
+  </li>
+</ol>
+
+  
+    </main>
+
+    <footer class="site-footer">
+
+
+</footer>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 0px; 
+  border-radius: 0px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #D9CED7; 
+  border-radius: 0px;
+  border: 0px solid 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #D9CED7; 
+}
+/* Firefox */
+  * {
+    scrollbar-width: auto;
+    }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 3px;
+  }
+
+body, html {
+  height: 100%;
+  margin:  0;
+  font-family: 'Bitter', serif;
+  background-color: #FFFFF5;
+  background-image: url("https://www.transparenttextures.com/patterns/brilliant.png");
+  padding-left:  7%;
+  padding-right:  8%;
+}
+
+.right 
+{
+  float:  right;
+}
+
+.left 
+{
+  float:  left;
+}
+.parallax1 {
+  /* The image used */
+  background-color: transparent;
+/*background-image: url("https://www.transparenttextures.com/patterns/brilliant.png");
+*/ height: 40%; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+ /* background-repeat: no-repeat;
+  background-size: cover;*/
+}
+
+.parallax2 {
+  /* The image used */
+  background-color: transparent;
+/*background-image: url("https://www.transparenttextures.com/patterns/brilliant.png");
+*/ height: 30%; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+ /* background-repeat: no-repeat;
+  background-size: cover;*/
+
+}
+
+.stat {
+  /* The image used */
+  background-color: transparent;
+/*background-image: url("https://www.transparenttextures.com/patterns/brilliant.png");
+*/ height: absolute; 
+/*  width:  30%;*/
+  background-attachment: fixed;
+  background-position: center;
+  margin-left:  40%;
+  margin-top:  10px;
+
+}
+
+.paragraph
+{
+  height: absolute;
+  background-color: transparent;
+  margin-top:  140px;}
+
+
+
+.title {
+  color: #001849;
+  font-size: 45px;
+  margin: 0px;
+  font-family:  'Advent Pro', sans-serif;
+  font-weight:  bold;
+
+}
+
+h1
+{
+  color: #001849;
+  font-family:  'Advent Pro', sans-serif;
+  font-weight:  bold;
+  font-size: 25px;
+}
+
+h2 
+{
+  color: #001849;
+  font-family:  'Advent Pro', sans-serif;
+  font-weight:  bold;
+  font-size: 25px;
+  margin-top:  40px;
+}
+
+h3 
+{
+  color: #001849;
+  font-family:  'Advent Pro', sans-serif;
+  font-weight:  bold;
+  font-size: 22px;
+}
+p {
+
+  color: #332F2D;
+  font-size: 16px;
+  font-family: 'Bitter', serif;
+  line-height:  24px;
+
+}
+
+a {
+
+  color: #332F2D;
+  font-family: 'Bitter', serif;
+  font-size: 16px;
+
+}
+
+.emphasis {
+
+  color: #001849;
+  letter-spacing: 2px;
+
+}
+
+.post-content
+{
+  margin-top:  10px;
+  margin-bottom:  10px;
+}
+
+ol, li, ul {
+
+    color: #332F2D;
+    font-size: 16px;
+    line-height:  1.5em;
+    text-align:  justify;
+
+}
+
+.list {
+
+  width:  80%;
+
+}
+
+.material-symbols-outlined {
+
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+  
+}
+
+#myBtn {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: transparent; /* Set a background color */
+  color: #332F2D; /* Text color */
+/*  cursor: pointer;  Add a mouse pointer on hover 
+*/ padding: 10px; /* Some padding */
+  border-radius: 10px; /* Rounded corners */
+  font-size: 18px; /* Increase font size */
+   font-family: 'Bitter', serif;
+}
+
+/*#myBtn:hover {
+  background-color: #555;} /* Add a dark-grey background on hover */
+.links {
+  display:  flex;
+  color: #001849;
+  font-size: 30px;
+  margin: 0px;
+  font-family:  'Advent Pro', sans-serif;
+  font-weight:  bold;
+  display:  none;
+}
+
+.page-content {
+  margin-top:  120px;
+}
+
+.links.space-between {
+
+  justify-content: space-between;
+
+}
+.dropbtn {
+  background-color: transparent;
+  color: #001849;
+  font-size: 45px;
+  font-family:  'Advent Pro', sans-serif; 
+  padding: 1px;
+  border: none;
+  cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color:  #FFFFF5;
+  min-width: 160px;
+  box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: #001849;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-size:  20px !important;
+}
+
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+
+}
+
+.stat1, .stat2
+{
+  display:  block;
+}
+
+.one {
+height:  500px;
+width:  50%;
+border:  none;
+}
+
+.two {
+height:  500px;
+width:  49%;
+border:  none;
+}
+
+.three
+{
+height:  500px;
+width:  33%;
+border:  none;
+}
+
+@media only screen and (max-width: 900px) {
+
+  .one {
+height:  500px;
+width:  45%;
+border:  none;
+}
+
+.two {
+height:  500px;
+width:  45%;
+border:  none;
+}
+
+.three
+{
+height:  500px;
+width:  45%;
+border:  none;
+}
+}
+@media only screen and (max-width: 668px) {
+
+  .one {
+height:  500px;
+width:  48%;
+border:  none;
+}
+
+.two {
+height:  500px;
+width:  48%;
+border:  none;
+}
+
+.three
+{
+height:  500px;
+width:  48%;
+border:  none;
+}
+}
+@media only screen and (max-width: 494px) {
+
+  .one {
+height:  500px;
+width:  97%;
+border:  none;
+}
+
+.two {
+height:  500px;
+width:  97%;
+border:  none;
+}
+
+.three
+{
+height:  500px;
+width:  97%;
+border:  none;
+}
+}
+@media only screen and (max-width: 600px) {
+  body, html {
+padding-left:  2%;
+padding-right:  2%;
+}
+.list {
+  width:  100%;
+}
+
+ol, li, ul {
+    line-height:  1.5em;
+    text-align:  left;
+
+}
+}
+</style>
+  </body>
+
+</html>

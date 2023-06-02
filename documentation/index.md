@@ -7,7 +7,7 @@ title:  "Documentation"
 
 This is a very rough outline of the current workflow for collecting authors from publisher websites and conference programs, and how we are analyzing this data.
 
-This is a very low-tec way of text mining and analysis, processes that have been formed out of convenience. This is not a definitive method for doing this work by any means.
+This is a very low-tech way of text mining and analysis, processes that have been formed out of convenience. This is not a definitive method for doing this work by any means.
 
 To follow, you'll need a basic understanding of the Command Line, Excel, and the ability to understand what a PHP script is doing (not the ability to write PHP). 
 

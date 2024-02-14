@@ -113,7 +113,7 @@ Analyzing # of TT and non-affiliated and North American authors
 ## Key
 Tenured or TT (517/641): 81%
 
-No affiliation, non-PhtD (94/641): 15%
+No affiliation, non-PhD (94/641): 15%
 
 Institutional affiliation, non-TT (23/641): 4%
 

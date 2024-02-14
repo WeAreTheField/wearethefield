@@ -99,7 +99,7 @@ Currently have:
   - MIT Press
   - Indiana University Press
 
-Analyzing number of TT and non-affiliated and North American authors
+Analyzing # of TT and non-affiliated and North American authors
 
 ### Breakdown of authors, combined
 <pre class="mermaid">
